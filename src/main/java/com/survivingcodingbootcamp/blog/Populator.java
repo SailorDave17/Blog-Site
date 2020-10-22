@@ -2,6 +2,7 @@ package com.survivingcodingbootcamp.blog;
 
 import com.survivingcodingbootcamp.blog.model.Post;
 import com.survivingcodingbootcamp.blog.model.Topic;
+import com.survivingcodingbootcamp.blog.storage.HashTagStorage;
 import com.survivingcodingbootcamp.blog.storage.PostStorage;
 import com.survivingcodingbootcamp.blog.storage.TopicStorage;
 import org.springframework.boot.CommandLineRunner;
@@ -12,12 +13,14 @@ public class Populator implements CommandLineRunner {
 
     private TopicStorage topicStorage;
     private PostStorage postStorage;
+    private HashTagStorage hashTagStorage;
 
 
-    public Populator(TopicStorage topicStorage, PostStorage postStorage) {
+    public Populator(TopicStorage topicStorage, PostStorage postStorage, HashTagStorage hashTagStorage) {
 
         this.topicStorage = topicStorage;
         this.postStorage = postStorage;
+        this.hashTagStorage = hashTagStorage;
     }
 
     @Override
