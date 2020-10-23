@@ -3,6 +3,7 @@ package com.survivingcodingbootcamp.blog.controller;
 import com.survivingcodingbootcamp.blog.storage.HashTagStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,11 +18,12 @@ public class HashTagController {
         this.hashTagStorage = hashTagStorage;
     }
 
-    @RequestMapping("hastags/{id}")
-    public String showSingleHashTag(Model model, @PathVariable long id) {
-        model.addAttribute("hashtags", hashTagStorage.retrieveHashTagById(id));
+    @GetMapping("hashtags")
+    public String displayHomePage(Model model){
+        model.addAttribute("hashtags", hashTagStorage.retrieveAllHashTags());
         return "single-hashtag-template";
     }
+
 
 }
 
