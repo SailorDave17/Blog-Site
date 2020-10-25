@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface HashTagRepository extends CrudRepository<HashTag, Long> {
 
+    HashTag findByHashTagName(String name);
 }

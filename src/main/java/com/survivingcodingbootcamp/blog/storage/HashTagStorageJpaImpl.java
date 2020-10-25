@@ -22,4 +22,9 @@ public class HashTagStorageJpaImpl implements HashTagStorage {
     public void addHashTag(HashTag hashTagToAdd) {hashTagRepo.save(hashTagToAdd);
 
     }
+    @Override
+    public HashTag retrieveHashTagByName(String name){
+        return hashTagRepo.findByHashTagName(name);
+
+    }
 }

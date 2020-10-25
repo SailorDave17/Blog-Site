@@ -12,12 +12,12 @@ public class HashTag {
     @Id
     @GeneratedValue
     private Long id;
-    private String name;
+    private String hashTagName;
     @ManyToMany
     private Collection<Post> posts;
     protected HashTag(){}
-    public HashTag (String name, Post...posts){
-        this.name = name;
+    public HashTag (String hashTagName, Post...posts){
+        this.hashTagName = hashTagName;
         this.posts = List.of(posts);
 
 
@@ -27,8 +27,8 @@ public class HashTag {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getHashTagName() {
+        return hashTagName;
     }
 
     public Collection<Post> getPosts() {
@@ -39,7 +39,7 @@ public class HashTag {
     public String toString() {
         return "HashTag{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + hashTagName + '\'' +
                 '}';
     }
 
@@ -51,13 +51,17 @@ public class HashTag {
         HashTag hashTag = (HashTag) o;
 
         if (id != null ? !id.equals(hashTag.id) : hashTag.id != null) return false;
-        return name != null ? name.equals(hashTag.name) : hashTag.name == null;
+        return hashTagName != null ? hashTagName.equals(hashTag.hashTagName) : hashTag.hashTagName == null;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (hashTagName != null ? hashTagName.hashCode() : 0);
         return result;
+    }
+
+    public void addPost(Post postToAdd){
+        posts.add(postToAdd);
     }
 }

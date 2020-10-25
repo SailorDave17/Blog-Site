@@ -12,4 +12,6 @@ public interface HashTagStorage {
     default void addHashTag(HashTag hashTagToAdd) {
 
     }
+
+    HashTag retrieveHashTagByName(String name);
 }

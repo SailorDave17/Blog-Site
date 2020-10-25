@@ -1,6 +1,7 @@
 package com.survivingcodingbootcamp.blog.controller;
 
 import com.survivingcodingbootcamp.blog.model.Post;
+import com.survivingcodingbootcamp.blog.storage.HashTagStorage;
 import com.survivingcodingbootcamp.blog.storage.PostStorage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,11 +19,12 @@ public class PostControllerTest {
     private PostController underTest;
     private Model model;
     private Post testPost;
+    private HashTagStorage hashTagStorage;
 
     @BeforeEach
     void setUp() {
         PostStorage postStorage = mock(PostStorage.class);
-        underTest = new PostController(postStorage);
+        underTest = new PostController(postStorage, hashTagStorage);
         model = mock(Model.class);
         testPost = mock(Post.class);
         when(postStorage.retrievePostById(1L)).thenReturn(testPost);

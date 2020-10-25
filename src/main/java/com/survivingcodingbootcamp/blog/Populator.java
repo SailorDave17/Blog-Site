@@ -60,6 +60,8 @@ public class Populator implements CommandLineRunner {
 
         hashTagStorage.addHashTag(new HashTag("hash1", post1, post2, post3));
 
+        HashTag hashTag1 = new HashTag("Fun");
+        hashTagStorage.addHashTag(hashTag1);
 
     }
 

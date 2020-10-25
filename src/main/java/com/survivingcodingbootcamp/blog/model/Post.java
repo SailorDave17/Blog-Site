@@ -41,6 +41,9 @@ public class Post {
     public String getContent() {
         return content;
     }
+    public Set<HashTag> getHashTags(){
+        return hashTags;
+    }
 
     @Override
     public String toString() {
