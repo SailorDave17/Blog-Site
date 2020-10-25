@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class HashTag {
@@ -15,9 +16,10 @@ public class HashTag {
     @ManyToMany
     private Collection<Post> posts;
     protected HashTag(){}
-    public HashTag (Long id, String name){
-        this.id = id;
+    public HashTag (String name, Post...posts){
         this.name = name;
+        this.posts = List.of(posts);
+
 
     }
 
@@ -58,5 +60,4 @@ public class HashTag {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
     }
-
 }

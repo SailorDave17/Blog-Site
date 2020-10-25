@@ -9,7 +9,7 @@ public interface HashTagStorage {
 
     HashTag retrieveHashTagById(long id);
 
-    default void save(HashTag hashTagToAdd) {
+    default void addHashTag(HashTag hashTagToAdd) {
 
     }
 }

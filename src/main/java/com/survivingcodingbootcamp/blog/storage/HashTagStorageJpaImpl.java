@@ -19,7 +19,7 @@ public class HashTagStorageJpaImpl implements HashTagStorage {
 
 
     @Override
-    public void save(HashTag hashTagToAdd) {hashTagRepo.save(hashTagToAdd);
+    public void addHashTag(HashTag hashTagToAdd) {hashTagRepo.save(hashTagToAdd);
 
     }
 }

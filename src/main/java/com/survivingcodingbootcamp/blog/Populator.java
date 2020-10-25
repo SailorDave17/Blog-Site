@@ -1,5 +1,6 @@
 package com.survivingcodingbootcamp.blog;
 
+import com.survivingcodingbootcamp.blog.model.HashTag;
 import com.survivingcodingbootcamp.blog.model.Post;
 import com.survivingcodingbootcamp.blog.model.Topic;
 import com.survivingcodingbootcamp.blog.storage.HashTagStorage;
@@ -56,6 +57,9 @@ public class Populator implements CommandLineRunner {
         topicStorage.save(topic3);
         Topic topic4 = new Topic("Object Oriented Programming and You");
         topicStorage.save(topic4);
+
+        hashTagStorage.addHashTag(new HashTag("hash1", post1, post2, post3));
+
 
     }
 

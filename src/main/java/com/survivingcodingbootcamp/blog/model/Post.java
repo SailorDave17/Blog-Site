@@ -1,6 +1,7 @@
 package com.survivingcodingbootcamp.blog.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Post {
@@ -12,14 +13,17 @@ public class Post {
     private Topic topic;
     @Lob
     private String content;
+    @ManyToMany(mappedBy = "posts")
+    private Set<HashTag>hashTags;
 
     protected Post() {
     }
 
-    public Post(String title, Topic topic, String content) {
+    public Post(String title, Topic topic, String content, HashTag...hashTags) {
         this.title = title;
         this.topic = topic;
         this.content = content;
+        this.hashTags = Set.of(hashTags);
     }
 
     public Long getId() {
