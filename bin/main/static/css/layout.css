@@ -24,4 +24,10 @@
         margin: 15px auto;
     }
 
+    .post-form{
+        flex: auto;
+    }
+
+
+
 }

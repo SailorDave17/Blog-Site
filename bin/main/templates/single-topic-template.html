@@ -29,6 +29,20 @@
                     <a th:text="${post.title}" th:href="'/posts/'+${post.id}" href="#"
                        class="posts__nav-link"></a>
                 </div>
+
+                <form action="/post" method="post" class="post-form">
+                    <h3 class="post-form-header">Submit a Post</h3>
+                    <label for="post-category-id">Topic</label>
+                    <select id="post-category-id" name="postCategory">
+                        <option th:each="topic: ${topic}" th:text="${topic.name}" th:value="${topic.id}">Learning TDD</option>
+                    </select>
+
+                    <label for="reviewContent">Enter Your Review:</label>
+                    <input type="text" id="reviewContent" name="reviewContent">
+                    <label for="hastag">Enter Hash-Tag:</label>
+                    <input type="text" id="hashtag" name="hashtag">
+                    <button type="submit">Go</button>
+                </form>
             </nav>
         </section>
     </main>

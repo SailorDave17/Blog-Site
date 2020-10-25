@@ -21,8 +21,10 @@ public class HashTagController {
     @GetMapping("hashtags")
     public String displayHomePage(Model model){
         model.addAttribute("hashtags", hashTagStorage.retrieveAllHashTags());
-        return "single-hashtag-template";
+        return "all-hashtag-template";
     }
+
+
 
 
 }

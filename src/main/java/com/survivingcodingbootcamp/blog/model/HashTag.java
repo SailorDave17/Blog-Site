@@ -58,4 +58,5 @@ public class HashTag {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
     }
+
 }

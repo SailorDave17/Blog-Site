@@ -22,7 +22,7 @@
         </nav>
     </header>
     <main class="main-content">
-        <h1 class="headline">Hash-Tags</h1>
+        <h1 class="headline">Hash-Tags by Name</h1>
         <section class="main-content">
             <nav class="main-content__nav home__nav">
                 <a th:each="hastag: ${hashtags}" th:text="${hashtags.name}" th:href="'/hastags/'+${hashtags.id}" href="#"
