@@ -36,7 +36,7 @@
             </form>
 
             <ul>
-               <li th:each="hashTags : ${post.hashTags}" th:text="${hashTags.hashTagName}">
+               <li th:each="hashTags : ${post.hashTags}" th:text="${hashTags.getHashTagName()}" th:href="${hashTags}">
 
                </li>
 
