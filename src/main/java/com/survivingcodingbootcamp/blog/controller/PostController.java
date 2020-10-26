@@ -1,8 +1,10 @@
 package com.survivingcodingbootcamp.blog.controller;
 
 import com.survivingcodingbootcamp.blog.model.HashTag;
+import com.survivingcodingbootcamp.blog.model.Topic;
 import com.survivingcodingbootcamp.blog.storage.HashTagStorage;
 import com.survivingcodingbootcamp.blog.storage.PostStorage;
+import com.survivingcodingbootcamp.blog.storage.TopicStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 public class PostController {
     private PostStorage postStorage;
     private HashTagStorage hashTagStorage;
+    private String author;
+    private Object topic;
 
     public PostController(PostStorage postStorage, HashTagStorage hashTagStorage) {
         this.postStorage = postStorage;
@@ -43,4 +47,13 @@ public class PostController {
         hashTagStorage.addHashTag(hashTagToAdd);
         return "redirect:/posts/{id}";
     }
+//    @PostMapping("/topic")
+//    public String createTopic(@RequestParam long newPost, @RequestParam String topic, @RequestParam String author, @RequestParam String post){
+//        this.author = author;
+//        this.topic;
+//        Topic selectedTopic = postStorage(id);
+//        Topic  = new post(selectedTopic, topic, post);
+//        TopicStorage.addPost(newPost);
+//        return "redirect:/";
+//    }
 }
