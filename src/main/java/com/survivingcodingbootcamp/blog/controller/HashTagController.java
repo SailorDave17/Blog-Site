@@ -31,7 +31,7 @@ public class HashTagController {
 
     }
 
-    @RequestMapping("/hastags")
+    @RequestMapping("hashtags/")
     public String displayAllHashTags(Model model){
         model.addAttribute("hashtags", hashTagStorage.retrieveAllHashTags());
         return "all-hashtag-template";
