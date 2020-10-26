@@ -25,7 +25,7 @@
         <h1 class="headline">Hash-Tags by Name</h1>
         <section class="main-content">
             <nav class="main-content__nav home__nav">
-                <a th:each="hastag: ${hashags}" th:text="${hashtags.name}" th:href="'/hastags/'+${hashtags.id}" href="#"
+                <a th:text="${hashtags.hashTagName}" th:href="'/hastags/'+${hashtags.id}" href="#"
                    class="topics__nav-link"></a>
             </nav>
         </section>

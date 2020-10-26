@@ -17,19 +17,25 @@ public class HashTagController {
         this.hashTagStorage = hashTagStorage;
     }
 
-    @GetMapping("hashtags")
-    public String displayHomePage(Model model){
+    @GetMapping("hashtags/{id}")
+    public String displayHomePage(Model model, @PathVariable Long id) {
+        model.addAttribute("hashtags", hashTagStorage.retrieveHashTagById(id));
+        return "single-hashtag-template";
+    }
+
+    @PostMapping("/hashtags")
+    public String addHashTag(@RequestParam String name) {
+        HashTag hashTagToAdd = new HashTag(name);
+        hashTagStorage.addHashTag(hashTagToAdd);
+        return "redirect:/post";
+
+    }
+
+    @RequestMapping("/hastags")
+    public String displayAllHashTags(Model model){
         model.addAttribute("hashtags", hashTagStorage.retrieveAllHashTags());
         return "all-hashtag-template";
     }
-
-@PostMapping("/hashtags")
-    public String addHashTag(@RequestParam String name){
-    HashTag hashTagToAdd = new HashTag(name);
-    hashTagStorage.addHashTag(hashTagToAdd);
-    return "redirect:/post";
-
-}
 
 
 }
