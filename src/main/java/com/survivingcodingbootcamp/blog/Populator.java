@@ -58,10 +58,9 @@ public class Populator implements CommandLineRunner {
         Topic topic4 = new Topic("Object Oriented Programming and You");
         topicStorage.save(topic4);
 
-        hashTagStorage.addHashTag(new HashTag("hash1", post1, post2, post3));
+        hashTagStorage.addHashTag(new HashTag("#autopopulate", post1, post2, post3));
 
-        HashTag hashTag1 = new HashTag("Fun");
-        hashTagStorage.addHashTag(hashTag1);
+
 
     }
 
