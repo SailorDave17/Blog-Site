@@ -32,14 +32,16 @@
 
                 <form action="/post" method="post" class="post-form">
                     <h3 class="post-form-header">Submit a Post</h3>
-                    <label for="post-category-id">Topic</label>
-                    <select id="post-category-id" name="postCategory">
+                    <label for="post-topic-id">Topic</label>
+                    <select id="post-topic-id" name="postCategory">
                         <option th:each="topic: ${topic}" th:text="${topic.name}" th:value="${topic.id}">Learning TDD</option>
                     </select>
 
-                    <label for="reviewContent">Enter Your Review:</label>
-                    <input type="text" id="reviewContent" name="reviewContent">
-                    <label for="hastag">Enter Hash-Tag:</label>
+                    <label for="postContent">Enter Your Post:</label>
+                    <input type="text" id="postContent" name="postContent">
+                    <label for="authorName">Enter Your Name</label>
+                    <input type="text" id="authorName" name="authorName">
+                    <label for="hashtag">Enter Hash-Tag:</label>
                     <input type="text" id="hashtag" name="hashtag">
                     <button type="submit">Go</button>
                 </form>
