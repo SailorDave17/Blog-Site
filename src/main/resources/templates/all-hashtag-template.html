@@ -30,10 +30,10 @@
         </section>
         <section class="hashtag-list" id="hashtag-list">
             <h2 class="has-tag-identifier">Hash-Tags:</h2>
-            <ul class="list" id="list">
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul>
+                <li th:each="hashTags : ${hashtags}" th:text="${hashTags.getHashTagName()}" th:href="${hashTags}">
+
+                </li>
 
             </ul>
             
