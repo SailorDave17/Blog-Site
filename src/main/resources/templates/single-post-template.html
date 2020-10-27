@@ -31,6 +31,7 @@
                 Eligendi necessitatibus blanditiis officia, odio deleniti natus molestiae fugiat ex quod vel aliquam
                 illum.
             </p>
+            <p th:text="'By: ' + ${post.author}" class="post__author">Author</p>
 
 
             <form th:action="'/posts/' + ${post.id}" method="post">
