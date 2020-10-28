@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/topics")
 public class TopicController {
 
-    private TopicStorage topicStorage;
-    private PostStorage postStorage;
+    private final TopicStorage topicStorage;
+//    private PostStorage postStorage;
 
     public TopicController(TopicStorage topicStorage) {
 

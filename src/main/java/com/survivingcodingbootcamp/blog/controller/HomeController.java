@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-    private TopicStorage topicStorage;
+    private final TopicStorage topicStorage;
 
     public HomeController(TopicStorage topicStorage) {
 
