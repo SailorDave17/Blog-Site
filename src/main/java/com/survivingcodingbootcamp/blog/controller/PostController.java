@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 public class PostController {
 
-    private PostStorage postStorage;
-    private TopicStorage topicStorage;
+    private final PostStorage postStorage;
+    private final TopicStorage topicStorage;
 
 
     public PostController(PostStorage postStorage, TopicStorage topicStorage) {
