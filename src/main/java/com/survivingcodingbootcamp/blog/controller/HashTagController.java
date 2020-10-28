@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HashTagController {
 
-    private HashTagStorage hashTagStorage;
-    private PostStorage postStorage;
+    private final HashTagStorage hashTagStorage;
+    private final PostStorage postStorage;
 
     public HashTagController(HashTagStorage hashTagStorage, PostStorage postStorage) {
 
